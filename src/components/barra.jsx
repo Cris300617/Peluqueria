@@ -131,27 +131,34 @@ const NavContent = styled.div`
     }
 
     .links {
-        position: absolute;
+        position: fixed;
         top: 80px;
-        right: 0;
+        left: 0;
         width: 100%;
+        height: calc(100vh - 80px);
         background: rgba(10,10,10,0.98);
         backdrop-filter: blur(10px);
+
+        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 30px;
-        padding: 40px 0;
-        transform: translateY(-120%);
-        transition: 0.4s ease;
-        border-bottom: 1px solid rgba(212,175,55,0.25);
+        justify-content: center;
+        gap: 40px;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: 0.3s ease;
     }
 
     .links.active {
-        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .links a {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 }
 `
