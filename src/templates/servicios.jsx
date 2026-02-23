@@ -226,4 +226,88 @@ const Services = styled.section`
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba(212,175,55,0.4);
     }
+
+    /* ========================= */
+/* ====== RESPONSIVE ====== */
+/* ========================= */
+
+@media (max-width: 1024px) {
+
+    section {
+        gap: 70px;
+    }
+
+    .service-content {
+        gap: 40px;
+    }
+
+    .service-card {
+        padding: 40px;
+    }
+
+    .image-wrapper {
+        width: 260px;
+        height: 340px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    padding: 120px 20px 80px 20px;
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .service-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text {
+        align-items: center;
+    }
+
+    .toggle-btn {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        max-width: 320px;
+        height: 380px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    padding: 110px 15px 70px 15px;
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .service-card {
+        padding: 30px 20px;
+        border-radius: 18px;
+    }
+
+    .service-title {
+        font-size: 1.3rem;
+    }
+
+    .text p {
+        font-size: 0.9rem;
+    }
+
+    .image-wrapper {
+        height: 320px;
+    }
+}
 `;

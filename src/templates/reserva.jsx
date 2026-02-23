@@ -61,4 +61,54 @@ const Hero = styled.section`
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
+
+@media (max-width: 1024px) {
+    justify-content: center;
+    gap: 60px;
+
+    .hero-left {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    flex-direction: column;
+    padding: 120px 20px 60px 20px;
+    text-align: center;
+    gap: 50px;
+
+    img {
+        width: 120px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    & > * {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    padding: 110px 15px 50px 15px;
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    & > * {
+        max-width: 100%;
+    }
+}
 `

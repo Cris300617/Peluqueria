@@ -195,4 +195,72 @@ const Hero = styled.section`
         font-weight: 600;
         color: #d4af37;
     }
+
+@media (max-width: 1024px) {
+    justify-content: center;
+    gap: 60px;
+
+    .hero-left {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    flex-direction: column;
+    padding: 120px 20px 60px 20px;
+    text-align: center;
+
+    img {
+        width: 120px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .precios {
+        width: 100%;
+    }
+
+    .price-card {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .price-card td {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    padding: 110px 15px 50px 15px;
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .price-card {
+        padding: 25px 18px;
+        border-radius: 18px;
+    }
+
+    .price-card td {
+        font-size: 0.85rem;
+    }
+}
 `

@@ -1,8 +1,11 @@
 import styled from "styled-components"
 import logo from "../assets/logo_ayp.png"
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { Icon } from "@iconify/react";
 
 export default function BarraDeNavegacion() {
+    const [menuOpen, setMenuOpen] = useState(false);
 
     return(
         <Container>
@@ -14,10 +17,14 @@ export default function BarraDeNavegacion() {
                         <span>A&P</span>
                     </div>
 
-                    <div className="links">
-                        <NavLink to="/">Inicio</NavLink>
-                        <NavLink to="/servicios">Servicios</NavLink>
-                        <NavLink to="/reserva">Reservar</NavLink>
+                    <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+                        <Icon icon={menuOpen ? "mdi:close" : "mdi:menu"} width="28" />
+                    </div>
+
+                    <div className={`links ${menuOpen ? "active" : ""}`}>
+                        <NavLink to="/" onClick={() => setMenuOpen(false)}>Inicio</NavLink>
+                        <NavLink to="/servicios" onClick={() => setMenuOpen(false)}>Servicios</NavLink>
+                        <NavLink to="/reserva" onClick={() => setMenuOpen(false)}>Reservar</NavLink>
                     </div>
                 </NavContent>
             </Navbar>
@@ -104,4 +111,47 @@ const NavContent = styled.div`
     .links a.active {
         color: #d4af37;
     }
+
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    color: #d4af37;
+}
+
+@media (max-width: 1024px) {
+    padding: 0 25px;
+}
+
+@media (max-width: 768px) {
+
+    .menu-icon {
+        display: block;
+        z-index: 1100;
+    }
+
+    .links {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background: rgba(10,10,10,0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 40px 0;
+        transform: translateY(-120%);
+        transition: 0.4s ease;
+        border-bottom: 1px solid rgba(212,175,55,0.25);
+    }
+
+    .links.active {
+        transform: translateY(0);
+    }
+
+    .links a {
+        font-size: 1.1rem;
+    }
+}
 `
